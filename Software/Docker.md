@@ -35,6 +35,27 @@ CMD [<comando_1>, <comando_2>, ..., <comando_n>]
 docker build <percorso>
 docker run 
 ```
+
+### Multi-stage
+E' possibile creare delle build tramite stage diversi (es. installazione dei packages, build, deploy), in modo da facilitarne la lettura durante il loro sviluppo. Un esempio è il seguente:
+```Dockerfile
+FROM alpine:latest AS builder
+RUN apk --no-cache add build-base
+
+FROM builder AS build1
+COPY source1.cpp source.cpp
+RUN g++ -o /binary source.cpp
+
+FROM builder AS build2
+COPY source2.cpp source.cpp
+RUN g++ -o /binary source.cpp
+```
+	FONTE: https://docs.docker.com/build/building/multi-stage/
+
+Nel caso si utilizzi questo metodo, è possibile anche indicare il livello della build a cui fermarsi (utile nel caso di test), utilizzando l'opzione "--target" durante la build del container
+```sh
+docker build --target build -t hello .
+```
 ## docker-compose.yml
 Il [docker-compose.yaml](https://docs.docker.com/compose/) è un file che contiene i dati necessari (incluse #porte, localizzazioni di [database](../Database/Database), dati di accesso, ecc.) per creare l'ambiente su cui far partire il programma.
 **NB. in environment non inserire le porte, perché renderebbe il container vulnerabile**.

@@ -41,6 +41,7 @@ Consiglio di utilizzare Obsidian per la lettura (se si decide di scaricare la re
 	- [Git-secrets](./Software/git-secrets)
 	- [Jenkins](./Software/Jenkins)
 	- [Kubernetes](./Software/Kubernetes)
+	- [OpenServerless](./Software/OpenServerless.md)
 	- [Postman](./Software/Postman)
 	- [s5cmd](./Software/s5cmd)
 	- [Terraform](./Software/Terraform)

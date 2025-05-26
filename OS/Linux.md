@@ -732,6 +732,10 @@ locate <nome file>
 
 **N.B.** Nel caso si voglia aggiornare il database contenente gli indirizzi dei file, si deve utilizzare [updatedb](#updatedb)
 
+
+#### logrotate
+Comando che permette di gestire la creazione dei log e ne permette la rotazione, compressione, rimozione e condivisione.
+
 #### ln
 Creare un [link](#link)
 ```Sh
@@ -2660,6 +2664,10 @@ Firewall semplificato. [Guida](https://help.ubuntu.com/community/UFW)
 Un *probe* (sonda) è un elemento utilizzato per raccogliere dati di un'infrastruttura hardware e restituirli in forma digitale.
 
 ### Linux::inodes
+
+## Package-manager
+### apt
+E' il gestore dei pacchetti di default di Linux
 
 ## Applicazioni Server
 ### [Apache](Apache.md)
